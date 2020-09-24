@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Overnight Sleep</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form (ngSubmit)="onSubmit()">
+    <h2><ion-icon name="moon"></ion-icon> I started sleeping soundly at...</h2>
+
+    <ion-item class="ion-padding">
+      <ion-datetime display-format="MMM D h:mm A" picker-format="MMM D h:mm A" placeholder="Select Time" name="bedtime" [(ngModel)]="bedtime"></ion-datetime>
+    </ion-item>
+
+    <h2><ion-icon name="sunny"></ion-icon> Then, I promptly woke up at...</h2>
+
+    <ion-item class="ion-padding">
+      <ion-datetime display-format="MMM D h:mm A" picker-format="MMM D h:mm A" placeholder="Select Time" name="waketime" [(ngModel)]="waketime"></ion-datetime>
+    </ion-item>
+
+    <ion-button color="light" type="submit">Submit</ion-button>
+  </form>
+</ion-content>

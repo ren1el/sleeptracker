@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Sleep Log</ion-title>
+  </ion-toolbar>
+</ion-header>
+    
+<ion-content class="ion-padding">
+  <ion-button *ngIf="data.length > 0" expand="block" color="dark" (click)="clearStorage()" class="ion-padding" routerLink="/home">Clear</ion-button>
+  <ion-button *ngIf="data.length == 0" disabled="true" expand="block" color="dark" (click)="clearStorage()" class="ion-padding" routerLink="/home">Clear</ion-button>
+  <ion-card *ngFor="let d of data">
+    <ion-card-header>{{ d.dateString() }} </ion-card-header>
+    <ion-card-content>{{ d.summaryString() }}</ion-card-content>
+  </ion-card>
+</ion-content>  

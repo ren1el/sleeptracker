@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>My Sleepiness</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Right now, my mood is...</h2>
+
+  <ion-list>
+    <ion-range color="dark" min="1" max="7" snaps="true" pin="true" [(ngModel)]="sleepinessValue">
+        <ion-icon name="happy" slot="start"></ion-icon>
+        <ion-icon name="bed" slot="end"></ion-icon>
+    </ion-range>
+  </ion-list>
+
+  <p *ngIf="sleepinessValue == 1">
+      Feeling active, vital, alert, or wide awake
+  </p>
+  <p *ngIf="sleepinessValue == 2">
+      Functioning at high levels, but not at peak; able to concentrate
+  </p>
+  <p *ngIf="sleepinessValue == 3">
+      Awake, but relaxed; responsive but not fully alert
+  </p>
+  <p *ngIf="sleepinessValue == 4">
+      Somewhat foggy, let down
+  </p>
+  <p *ngIf="sleepinessValue == 5">
+      Foggy; losing interest in remaining awake; slowed down
+  </p>
+  <p *ngIf="sleepinessValue == 6">
+      Sleepy, woozy, fighting sleep; prefer to lie down
+  </p>
+  <p *ngIf="sleepinessValue == 7">
+      No longer fighting sleep, sleep onset soon; having dream-like thoughts
+  </p>
+
+  <ion-button (click)="onSubmit()" color="dark">Submit</ion-button>
+
+</ion-content>
